@@ -69,6 +69,13 @@
               </div>
             </div>
 
+            <!-- ... -->
+            {{#if password}}
+            <div class="alert alert-info" role="alert">
+              <span class="mr-2">Your password is:</span> <code>{{password}}</code>
+            </div>
+            {{/if}}
+
             <button class="btn btn-success" type="submit">Generate Password</button>
           </form>
         </div>
@@ -76,6 +83,7 @@
         <small class="card-footer text-muted text-end">
           Idea is inspired by Strong Random Password
         </small>
+
       </div>
     </div>
   </div>
