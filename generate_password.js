@@ -38,6 +38,11 @@ function generatePassword(option) {
   }
   console.log('collection', collection)
 
+  // return error notice if collection is empty
+  if (collection.length === 0) {
+    return 'There is no valid character in your selection.'
+  }
+
   // start generating password
   let password = ''
   for (let i = 0; i < Number(option.length); i++) {
