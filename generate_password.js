@@ -12,7 +12,7 @@ function generatePassword() {
     lowercase: 'on',
     uppercase: 'on',
     numbers: 'on',
-    excludeCharacters: '40'
+    excludeCharacters: '12hf'
   }
   console.log('option', option)
 
@@ -35,10 +35,13 @@ function generatePassword() {
     collection = collection.concat(symbols.split(''))
   }
 
-  console.log('collection', collection)
-
   // remove things user do not need
-
+  if (option.excludeCharacters) {    //如果傳送的資料中有 exlcudeChracters 就要對 collection 進行過濾
+    collection = collection.filter(chartacter => {
+      return !option.excludeCharacters.includes(chartacter)
+    })
+  }
+  console.log('collection', collection)
   // start generating password
 
   // return the generated password
