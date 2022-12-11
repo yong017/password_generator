@@ -1,3 +1,8 @@
+// define sample function to randomly return a item in an array
+function sample(array) {
+  const index = Math.floor(Math.random() * array.length)
+  return array[index]
+}
 // define generatePassword function
 function generatePassword() {
   // define things user might want
@@ -42,7 +47,13 @@ function generatePassword() {
     })
   }
   console.log('collection', collection)
+
   // start generating password
+  let password = ''
+  for (let i = 0; i < Number(option.length); i++) {
+    password += sample(collection)
+  }
+  console.log('password', password)
 
   // return the generated password
   console.log('This is working')
